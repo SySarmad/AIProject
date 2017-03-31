@@ -8,17 +8,16 @@ class Point{
 	 	float y;
 	 	
 	 public:
-		
-		Point()
-	 	{
-	 		this->x = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX));
-	 		this->y = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX));
-	 	}
 	 
-	 	Point(float x = 0.0, float y= 0.0)
+		Point()
+		{
+			
+		}
+	 
+	 	Point(float x, float y)
 	 	{
-	 		this->x = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX));
-	 		this->y = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX));
+	 		this->x = x;
+	 		this->y = y;
 	 	}
 
 	 // Extractors.
