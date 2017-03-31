@@ -3,17 +3,17 @@
 class Point{
 	 private:
 
-	 	double x;
-	 	double y;
+	 	float x;
+	 	float y;
 	 
 	 public:
 		Point();	 	
-	 	Point(double x, double y);
+	 	Point(float x, float y);
 
 	    
-        double getX(); 
-        double getY();
-        double dist(Point other); 
+        float getX(); 
+        float getY();
+        float dist(Point other); 
         Point add(Point b);
         void move(double a, double b);
         Point decelerate(float rate);

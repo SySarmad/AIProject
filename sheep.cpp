@@ -1,6 +1,7 @@
 #include "Point.h"
 #include "color.h"
 
+
 class Sheep
 {
 

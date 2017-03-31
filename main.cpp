@@ -1,5 +1,7 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
+#include <cstdlib>
+#include <ctime>
 #include "sheep.h"
 
 using namespace std;
@@ -28,6 +30,7 @@ void init2D(float r, float g, float b)
 
 int main(int argc, char **argv)
 {
+	srand (static_cast <unsigned> (time(0)));
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 	glutInitWindowPosition(100, 100);

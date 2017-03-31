@@ -1,4 +1,5 @@
 #include <math.h>
+#include <cstdlib>
 
 class Point{
 	 private:
@@ -10,8 +11,8 @@ class Point{
 		
 		Point()
 	 	{
-	 		this->x = x;
-	 		this->y = y;
+	 		this->x = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/X));
+	 		this->y = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/X));
 	 	}
 	 
 	 	Point(float x = 0.0, float y= 0.0)
