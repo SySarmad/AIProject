@@ -1,6 +1,5 @@
 // sheep.h
 
-#define Sheep
 #include "Point.h"
 #include "color.h"
 
@@ -29,3 +28,5 @@ public:
 	void update_velocity();
 
 };
+
+

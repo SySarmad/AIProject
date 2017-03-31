@@ -1,7 +1,5 @@
 // sheep.h
 
-#define Point
-
 class Point{
 	 private:
 
@@ -10,7 +8,7 @@ class Point{
 	 
 	 public:
 	 	
-	 	Point();
+	 	Point(double x, double y);
 
 	    
         double getX(); 
@@ -21,3 +19,4 @@ class Point{
         Point decelerate(float rate);
 
 	};
+
