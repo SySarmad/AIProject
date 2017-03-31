@@ -8,16 +8,11 @@
 	"buffers":
 	[
 		{
-			"contents": "#include <GL/gl.h>\n#include <GL/glut.h>\n\nusing namespace std;\n\nvoid renderScene(void)\n{\n\n\tglClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);\n\n\tglBegin(GL_TRIANGLES);\n\t\tglVertex3f(-0.5,-0.5,0.0);\n\t\tglVertex3f(0.5,0.0,0.0);\n\t\tglVertex3f(0.0,0.5,0.0);\n\tglEnd();\n\n\tglutSwapBuffers();\n}\n\n\n\nint main(int argc, char **argv)\n{\n\tglutInit(&argc, argv);\n\tglutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);\n\tglutInitWindowPosition(100, 100);\n\tglutInitWindowSize(200, 200);\n\tglutCreateWindow(\"Test\");\n\n\tglutDisplayFunc(renderScene);\n\n\tglutMainLoop();\n\n\treturn 1;\n}\n",
-			"file": "main.cpp",
-			"file_size": 567,
-			"file_write_time": 131353895343621656,
+			"file": "/home/ryan/School/main.cpp",
 			"settings":
 			{
-				"buffer_size": 560,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "#include <GL/gl.h>"
+				"buffer_size": 753,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -69,6 +64,7 @@
 	},
 	"file_history":
 	[
+		"/home/ryan/School/AI Project/AIProject/main.cpp"
 	],
 	"find":
 	{
@@ -108,24 +104,23 @@
 			[
 				{
 					"buffer": 0,
-					"file": "main.cpp",
+					"file": "/home/ryan/School/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 560,
+						"buffer_size": 753,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								62,
-								62
+								22,
+								22
 							]
 						],
 						"settings":
 						{
-							"auto_name": "#include <GL/gl.h>",
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,

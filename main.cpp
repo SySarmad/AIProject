@@ -1,6 +1,6 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
-#include "sheep.h"
+#include <sheep.h>
 
 using namespace std;
 
