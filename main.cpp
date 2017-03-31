@@ -8,24 +8,32 @@ void renderScene(void)
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glBegin(GL_TRIANGLES);
-		glVertex3f(-0.5,-0.5,0.0);
-		glVertex3f(0.5,0.0,0.0);
-		glVertex3f(0.0,0.5,0.0);
+	glBegin(GL_POINTS);
+		for(int i = 0; i < 100; i++)
+		{
+			glVertex2i(i, i);
+		}
 	glEnd();
 
-        glutSwapBuffers();
+    glutSwapBuffers();
 }
 
-
+void init2D(float r, float g, float b)
+{
+	glClearColor(r,g,b,0.0);  
+	glMatrixMode (GL_PROJECTION);
+	gluOrtho2D (0.0, 500.0, 0.0, 500.0);
+}
 
 int main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 	glutInitWindowPosition(100, 100);
-	glutInitWindowSize(200, 200);
+	glutInitWindowSize(500, 500);
 	glutCreateWindow("Test");
+
+	init2D(0.0, 0.0, 0.0);
 
 	glutDisplayFunc(renderScene);
 
