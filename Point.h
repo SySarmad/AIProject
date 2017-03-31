@@ -8,7 +8,7 @@ class Point{
 	 
 	 public:
 		Point();	 	
-	 	Point(float x, float y);
+	 	Point(int range);
 
 	    
         float getX(); 
