@@ -1,0 +1,42 @@
+main:
+
+creates the field
+sets the sheep
+sets the doggie
+starts loop
+
+the loop will:
+update the positions of the sheep, and doggie
+call detect_dog on sheep within X dist. of dog
+draw new positions to screen
+
+
+
+sheep:
+
+point(x, y)
+velocity
+color, range, velocityratio, herd-ability, deceleration
+
+
+functions:
+
+detect_dog(dog location)
+
+get_location()
+
+get_color()
+
+update position() void:
+
+update_velocity() void
+
+
+dog:
+
+
+point(x, y)
+velocity
+
+neural network
+statistical analysis 

@@ -26,7 +26,9 @@ private:
     float vratio;
     float deceleration;
     bool herd;
+
 public:
+
 	Sheep(Color color, float range, float vratio, float deceleration, bool herd)
 	{
 		// this.position = random (x, y) values 
