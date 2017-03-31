@@ -1,22 +1,15 @@
 // sheep.h
 
-#ifndef sheep_h
-#define sheep_h
+#define Sheep
+#include "Point.h"
+#include "color.h"
 
 class Sheep
 {
-	class Color{
-	private:
-		float red;
-    	float blue;
-    	float green;
-	
-	public:
-		Color(float red; float blue; float green)
-		{
-	}
+
 private:
 
+	
 	Point position;
     Point velocity;
     Color color;
@@ -27,12 +20,12 @@ private:
 
 public:
 
-	Sheep(Color color, float range, float vratio, float deceleration, bool herd)
-
-	Point get_locaton()
-
-	void update_position()
+	Sheep(Color color, float range, float vratio, float deceleration, bool herd);
 	
-	void update_velocity()
+	Point get_locaton();
+
+	void update_position();
+	
+	void update_velocity();
 
 };

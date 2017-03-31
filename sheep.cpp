@@ -1,23 +1,10 @@
+#include "Point.h"
+#include "color.h"
 class Sheep
 {
-	 
-	class Color{
-	private:
-		float red;
-    	float blue;
-    	float green;
+
 	
-	public:
-		Color(float red = 0.0f; float blue = 0.0f; float green = 0.0f)
-		{
-			this.red = red;
-			this.blue = blue;
-			this.green = green;
-		}
-
-
-	}
-private:
+	private:
 
 	Point position = new Point();
     Point velocity = new Point();
@@ -27,7 +14,7 @@ private:
     float deceleration;
     bool herd;
 
-public:
+	public:
 
 	Sheep(Color color, float range, float vratio, float deceleration, bool herd)
 	{

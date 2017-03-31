@@ -1,8 +1,9 @@
 class Point{
 	 private:
 
-	 	double x
-	 	double y
+	 	double x;
+	 	double y;
+	 	
 	 public:
 	 	Point(double x = 0.0, double y= 0.0)
 	 	{
@@ -11,8 +12,8 @@ class Point{
 	 	}
 
 	 // Extractors.
-        double x() { return this.x; }
-        double y() { return this.y; }
+        double getX() { return this.x; }
+        double getY() { return this.y; }
 
         // Distance to another point.  Pythagorean thm.
         double dist(Point other) {
