@@ -7,7 +7,7 @@ class Point{
 	 	double y;
 	 
 	 public:
-	 	
+		Point();	 	
 	 	Point(double x, double y);
 
 	    

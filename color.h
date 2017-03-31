@@ -1,11 +1,14 @@
 class Color{
-	
-	private:
+
+	public:
 		float red;
     	float blue;
     	float green;
-	
-	public:
+
+
+
+		Color();
+		
 		Color(float red,float blue, float green);
 
 

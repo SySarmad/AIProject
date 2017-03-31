@@ -1,43 +1,59 @@
+#include <math.h>
+
 class Point{
 	 private:
 
-	 	double x;
-	 	double y;
+	 	float x;
+	 	float y;
 	 	
 	 public:
-	 	Point(double x = 0.0, double y= 0.0)
+		
+		Point()
 	 	{
-	 		this.x = x;
-	 		this.y = y;
+	 		this->x = x;
+	 		this->y = y;
+	 	}
+	 
+	 	Point(float x = 0.0, float y= 0.0)
+	 	{
+	 		this->x = x;
+	 		this->y = y;
 	 	}
 
 	 // Extractors.
-        double getX() { return this.x; }
-        double getY() { return this.y; }
+        float getX() 
+        { 
+			return (this->x > 0.0) ? (this->x + 0.5) : (this->x - 0.5); 
+		}
+		
+        double getY() 
+        { 
+			return (this->y > 0.0) ? (this->y + 0.5) : (this->y - 0.5); 
+		}
 
         // Distance to another point.  Pythagorean thm.
-        double dist(Point other) {
-                double xd = this.x - other.x;
-                double yd = this.y - other.y;
+        float dist(Point other) {
+                float xd = this->x - other.x;
+                float yd = this->y - other.y;
                 return sqrt(xd*xd + yd*yd);
         }
 
         // Add or subtract two points.
         Point add(Point b)
         {
-                return Point(this.x + b.x, this.y + b.y);
+                return Point(this->x + b.x, this->y + b.y);
         }
 
         // Move the existing point.
-        void move(double a, double b)
+        void move(float a, float b)
         {
-                this.x += a;
-                this.y += b;
+                this->x += a;
+                this->y += b;
         }
 
-        Point decelerate(float rate)
+        Point* decelerate(float rate)
         {
-                return new Point(this.x*rate, this.y*rate);
+                return new Point(this->x*rate, this->y*rate);
 
         }
 

@@ -1,14 +1,15 @@
 #include "Point.h"
 #include "color.h"
+
 class Sheep
 {
 
 	
 	private:
 
-	Point position = new Point();
-    Point velocity = new Point();
-    Color color = new Color();
+	Point position = Point();
+    Point velocity = Point();
+    Color color = Color();
     float range;
     float vratio;
     float deceleration;
@@ -19,25 +20,29 @@ class Sheep
 	Sheep(Color color, float range, float vratio, float deceleration, bool herd)
 	{
 		// this.position = random (x, y) values 
-		this.color = color;
-		this.range = range;
-		this.vratio = vratio;
-		this.deceleration = deceleration;
-		this.herd = herd;
+		this->color = color;
+		this->range = range;
+		this->vratio = vratio;
+		this->deceleration = deceleration;
+		this->herd = herd;
 	}
 
 	Point get_locaton()
 	{
-		return this.p
+		return this->position;
 	}
 
 	float* get_color()
 	{
-		return [this.color.red, this.color.blue, this.color.green];;
+		return new float[3]{this->color.red, this->color.blue, this->color.green};
+		
+	}
+	
+	
 
 	void update_position()
 	{
-		   this.p.add(this.velocity)
+		   this->position.add(this->velocity);
 	}
 
 	
@@ -45,10 +50,10 @@ class Sheep
 	{
 		//if this.velocity >= unknown amount
 
-			this.velocity.deceleration(this.deceleration);
+			this->velocity.decelerate(this->deceleration);
 
 		//else stop or change directions	
 
 	}
-
+	
 };
