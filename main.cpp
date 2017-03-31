@@ -1,8 +1,9 @@
+#include <stdlib.h>
+#include <time.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
-#include <cstdlib>
-#include <ctime>
 #include "sheep.h"
+
 
 using namespace std;
 
@@ -10,11 +11,19 @@ void renderScene(void)
 {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+	SheepInfo* info = new SheepInfo(1.0, 1.0, 1.0, 0.0, 0.0, 0.0, false);
+	
+	Sheep** sheeps = new Sheep*[100];
+
+	Point p;
 
 	glBegin(GL_POINTS);
 		for(int i = 0; i < 100; i++)
 		{
-			glVertex2i(i, i);
+			sheeps[i] = new Sheep(500, 500, info);
+			p = sheeps[i]->get_location();
+			glVertex2i((int)p.getX(), (int)p.getY());
 		}
 	glEnd();
 

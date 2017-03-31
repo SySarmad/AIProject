@@ -1,7 +1,7 @@
 // sheep.h
 
 #include "Point.h"
-#include "color.h"
+#include "SheepInfo.h"
 
 class Sheep
 {
@@ -9,19 +9,18 @@ class Sheep
 private:
 
 	
-	Point position;
+	Point* position;
     Point velocity;
-    Color color;
-    float range;
-    float vratio;
-    float deceleration;
-    bool herd;
-
+    SheepInfo* info;
+    
+    
 public:
 
-	Sheep(Color color, float range, float vratio, float deceleration, bool herd);
+	Sheep();
+
+	Sheep(int xfield, int yfield, SheepInfo* info);
 	
-	Point get_locaton();
+	Point get_location();
 
 	void update_position();
 	

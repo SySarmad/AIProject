@@ -1,6 +1,8 @@
 #include <math.h>
 #include <cstdlib>
 
+using namespace std;
+
 class Point{
 	 private:
 

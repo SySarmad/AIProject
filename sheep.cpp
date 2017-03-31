@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include "Point.h"
-#include "color.h"
+#include "SheepInfo.h"
 
+using namespace std;
 
 class Sheep
 {
@@ -11,39 +12,24 @@ class Sheep
 
 	Point* position;
     Point velocity;
-    Color color;
-    float range;
-    float vratio;
-    float deceleration;
-    bool herd;
+    SheepInfo* info;
 
 	public:
 
-	Sheep(int xfield, int yfield, Color color, float range, float vratio, float deceleration, bool herd)
+	Sheep()
+	{}
+
+	Sheep(int xfield, int yfield, SheepInfo* info)
 	{
 		float xpos = rand() % (xfield - 100) + 50;
 		float ypos = rand() % (yfield - 100) + 50;
 		this->position = new Point(xpos, ypos); 
-		this->color = color;
-		this->range = range;
-		this->vratio = vratio;
-		this->deceleration = deceleration;
-		this->herd = herd;
+		this->info = info;
 	}
 
-	Point get_locaton()
+	Point get_location()
 	{
 		return *this->position;
-	}
-
-	float* get_color()
-	{
-		float* colors = new float[3];
-		colors[0] = this->color.red;
-		colors[1] = this->color.blue;
-		colors[2] = this->color.green;
-		return colors;
-		
 	}
 	
 	
@@ -58,7 +44,7 @@ class Sheep
 	{
 		//if this.velocity >= unknown amount
 
-			this->velocity.decelerate(this->deceleration);
+			this->velocity.decelerate(this->info->getDeceleration());
 
 		//else stop or change directions	
 
