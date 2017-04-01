@@ -1,3 +1,6 @@
+#ifndef SHEEPINFO_H
+#define SHEEPINFO_H
+
 class SheepInfo
 {
 	float red;
@@ -27,3 +30,5 @@ public:
 	bool getHerd();
 	
 };
+
+#endif

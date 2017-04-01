@@ -1,5 +1,7 @@
-// sheep.h
+#ifndef SHEEP_H
+#define SHEEP_H
 
+#include <stdlib.h>
 #include "Point.h"
 #include "SheepInfo.h"
 
@@ -28,4 +30,4 @@ public:
 
 };
 
-
+#endif

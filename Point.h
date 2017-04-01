@@ -1,4 +1,8 @@
-// sheep.h
+#ifndef POINT_H
+#define POINT_H
+
+#include <math.h>
+#include <cstdlib>
 
 class Point{
 	 private:
@@ -15,8 +19,9 @@ class Point{
         float getY();
         float dist(Point other); 
         Point add(Point b);
-        void move(double a, double b);
-        Point decelerate(float rate);
+        void move(float a, float b);
+        Point* decelerate(float rate);
 
-	};
+};
 
+#endif

@@ -1,53 +1,41 @@
 #include <stdlib.h>
 #include "Point.h"
 #include "SheepInfo.h"
+#include "sheep.h"
 
 using namespace std;
 
-class Sheep
+Sheep::Sheep()
+{}
+
+Sheep::Sheep(int xfield, int yfield, SheepInfo* info)
 {
+	float xpos = rand() % (xfield - 100) + 50;
+	float ypos = rand() % (yfield - 100) + 50;
+	this->position = new Point(xpos, ypos); 
+	this->info = info;
+}
 
-	
-	private:
+Point Sheep::get_location()
+{
+	return *this->position;
+}
 
-	Point* position;
-    Point velocity;
-    SheepInfo* info;
 
-	public:
 
-	Sheep()
-	{}
+void Sheep::update_position()
+{
+	   this->position->add(this->velocity);
+}
 
-	Sheep(int xfield, int yfield, SheepInfo* info)
-	{
-		float xpos = rand() % (xfield - 100) + 50;
-		float ypos = rand() % (yfield - 100) + 50;
-		this->position = new Point(xpos, ypos); 
-		this->info = info;
-	}
 
-	Point get_location()
-	{
-		return *this->position;
-	}
-	
-	
+void Sheep::update_velocity()
+{
+	//if this.velocity >= unknown amount
 
-	void update_position()
-	{
-		   this->position->add(this->velocity);
-	}
+		this->velocity.decelerate(this->info->getDeceleration());
 
-	
-	void update_velocity()
-	{
-		//if this.velocity >= unknown amount
+	//else stop or change directions	
 
-			this->velocity.decelerate(this->info->getDeceleration());
+}
 
-		//else stop or change directions	
-
-	}
-	
-};
