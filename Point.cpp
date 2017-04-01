@@ -36,9 +36,10 @@ float Point::dist(Point other) {
 }
 
 // Add or subtract two points.
-Point Point::add(Point b)
+void Point::add(Point* b)
 {
-		return Point(this->x + b.x, this->y + b.y);
+		this->x += b->x;
+		this->y += b->y;
 }
 
 // Move the existing point.

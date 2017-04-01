@@ -12,7 +12,7 @@ private:
 
 	
 	Point* position;
-    Point velocity;
+    Point* velocity;
     SheepInfo* info;
     
     
@@ -23,6 +23,8 @@ public:
 	Sheep(int xfield, int yfield, SheepInfo* info);
 	
 	Point get_location();
+	
+	void dogCheck();
 
 	void update_position();
 	
