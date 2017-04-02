@@ -6,26 +6,38 @@
 
 using namespace std;
 
-int numSheep = 100;
+int numSheep = 1000;
 Sheep** sheeps;
+SheepInfo *info[5];
 
 void initSheep()
 {
 	sheeps = new Sheep*[numSheep];
-	
-	SheepInfo* info = new SheepInfo(1.0, 1.0, 1.0, 0.0, 0.0, 0.0, false);
+	info[0] = new SheepInfo(1.0, 1.0, 1.0, 0.0, 0.0, 0.0, false);
+	info[1] = new SheepInfo(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, false);
+	info[2] = new SheepInfo(0.0, 1.0, 0.0, 0.0, 0.0, 0.0, false);
+	info[3] = new SheepInfo(0.0, 0.0, 1.0, 0.0, 0.0, 0.0, false);
+	info[4] = new SheepInfo(1.0, 0.0, 1.0, 0.0, 0.0, 0.0, false);
 	
 	for(int i = 0; i < numSheep; i++)
 	{
-		sheeps[i] = new Sheep(500, 500, info);
+		sheeps[i] = new Sheep(500, 500, info[i%5]);
 	}
 }
 
 void updateSheep()
 {
+	Point p;
+	
 	for(int i = 0; i < numSheep; i++)
 	{
 		sheeps[i]->dogCheck();
+		p = sheeps[i]->get_location();
+		if(abs((int)p.getX()) > 500 || abs((int)p.getY()) > 500)
+		{
+			delete sheeps[i];
+			sheeps[i] = new Sheep(500, 500, info[0]);
+		}
 	}
 	
 	glutPostRedisplay();
@@ -37,10 +49,13 @@ void renderScene()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	Point p;
-
+	float* color;
+	
 	glBegin(GL_POINTS);
-		for(int i = 0; i < 100; i++)
+		for(int i = 0; i < numSheep; i++)
 		{
+			color = sheeps[i]->getColor();
+			glColor3f(color[0], color[1], color[2]);
 			p = sheeps[i]->get_location();
 			glVertex2i((int)p.getX(), (int)p.getY());
 		}

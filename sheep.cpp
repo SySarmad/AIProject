@@ -11,8 +11,8 @@ Sheep::Sheep()
 
 Sheep::Sheep(int xfield, int yfield, SheepInfo* info)
 {
-	float xpos = rand() % (xfield - 100) + 50;
-	float ypos = rand() % (yfield - 100) + 50;
+	float xpos = rand() % (xfield * 2 - 100) + 50 - xfield;
+	float ypos = rand() % (yfield * 2 - 100) + 50 - xfield;
 	this->position = new Point(xpos, ypos); 
 	this->velocity = new Point(-xpos / sqrt(xpos * xpos + ypos * ypos), -ypos / sqrt(xpos * xpos + ypos * ypos));
 	this->info = info;
@@ -21,6 +21,15 @@ Sheep::Sheep(int xfield, int yfield, SheepInfo* info)
 Point Sheep::get_location()
 {
 	return *this->position;
+}
+
+float* Sheep::getColor()
+{
+	float* color = new float[3];
+	color[0] = this->info->getRed();
+	color[1] = this->info->getGreen();
+	color[2] = this->info->getBlue();
+	return color;
 }
 
 void Sheep::dogCheck()

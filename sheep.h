@@ -24,6 +24,8 @@ public:
 	
 	Point get_location();
 	
+	float* getColor();
+	
 	void dogCheck();
 
 	void update_position();
