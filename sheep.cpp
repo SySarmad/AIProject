@@ -11,10 +11,11 @@ Sheep::Sheep()
 
 Sheep::Sheep(int xfield, int yfield, SheepInfo* info)
 {
-	float xpos = rand() % (xfield * 2 - 100) + 50 - xfield;
-	float ypos = rand() % (yfield * 2 - 100) + 50 - xfield;
-	this->position = new Point(xpos, ypos); 
-	this->velocity = new Point(-xpos / sqrt(xpos * xpos + ypos * ypos), -ypos / sqrt(xpos * xpos + ypos * ypos));
+	float xpos = rand() % (xfield * 2 - 200) + 100 - xfield;
+	float ypos = rand() % (yfield * 2 - 200) + 100 - yfield;
+	this->position = new Point(xpos, ypos);
+	this->velocity = new Point(0.0, 0.0); 
+	//this->velocity = new Point(-xpos / sqrt(xpos * xpos + ypos * ypos), -ypos / sqrt(xpos * xpos + ypos * ypos));
 	this->info = info;
 }
 
