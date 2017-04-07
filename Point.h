@@ -17,11 +17,12 @@ class Point{
 	    
         float getX(); 
         float getY();
-        float dist(Point other); 
+        float dist(Point other);
         void add(Point* b);
         void move(float a, float b);
-        Point* decelerate(float rate);
-
+        void decelerate(float rate);
+        float magnitude();
+        void stop();
 };
 
 #endif

@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <iostream>
 #include "Point.h"
 #include "SheepInfo.h"
 #include "sheep.h"
@@ -33,27 +34,31 @@ float* Sheep::getColor()
 	return color;
 }
 
-void Sheep::dogCheck()
+void Sheep::dogCheck(Point d, Point dv)
 {
-	//check for dog
-	//if dog, update velocity based on dog
-	//else nothing?
-	this->update_position();
+	if(this->position->dist(d) < this->info->getRange())
+	{
+		float vr = this->info->getVratio();
+		this->velocity->move(dv.getX() * vr, dv.getY() * vr);
+	}
 }
 
 void Sheep::update_position()
 {
-	   this->position->add(this->velocity);
+	this->position->add(this->velocity);
+	this->update_velocity();
 }
 
 
 void Sheep::update_velocity()
 {
-	//if this.velocity >= unknown amount
-
+	if(this->velocity->magnitude() > 0.01)
+	{
 		this->velocity->decelerate(this->info->getDeceleration());
-
-	//else stop or change directions	
-
+	}
+	else
+	{
+		this->velocity->stop();
+	}
 }
 

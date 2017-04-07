@@ -9,17 +9,20 @@ using namespace std;
 // Extractors.
 float Point::getX() 
 { 
-	return (this->x > 0.0) ? (this->x + 0.5) : (this->x - 0.5); 
+	//return (this->x > 0.0) ? (this->x + 0.5) : (this->x - 0.5); 
+	return this->x;
 }
 
 float Point::getY() 
 { 
-	return (this->y > 0.0) ? (this->y + 0.5) : (this->y - 0.5); 
+	//return (this->y > 0.0) ? (this->y + 0.5) : (this->y - 0.5); 
+	return this->y;
 }
 
 Point::Point()
 {
-	
+	this->x = 0.0;
+	this->y = 0.0;
 }
 
 Point::Point(float x, float y)
@@ -45,12 +48,23 @@ void Point::add(Point* b)
 // Move the existing point.
 void Point::move(float a, float b)
 {
-		this->x += a;
-		this->y += b;
+		this->x = a;
+		this->y = b;
 }
 
-Point* Point::decelerate(float rate)
+void Point::decelerate(float rate)
 {
-		return new Point(this->x*rate, this->y*rate);
+		this->x = this->x*rate;
+		this->y = this->y*rate;
+}
 
+float Point::magnitude()
+{
+	return sqrt(x*x + y*y);
+}
+
+void Point::stop()
+{
+	this->x = 0.0;
+	this->y = 0.0;
 }

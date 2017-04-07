@@ -26,7 +26,7 @@ public:
 	
 	float* getColor();
 	
-	void dogCheck();
+	void dogCheck(Point d, Point dv);
 
 	void update_position();
 	
